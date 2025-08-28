@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Typography, Button, Box } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
 import EmailIcon from "@mui/icons-material/Email";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -17,16 +17,26 @@ export default function HeroSection() {
         py: 10,
       }}
     >
-      <Box sx={{ display: "flex", width: "100%" }}>
-        {/* Box da esquerda: conteúdo existente */}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" }, // coluna no mobile, linha no desktop
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+          gap: 4,
+        }}
+      >
+        {/* Box da esquerda: texto */}
         <Box
           sx={{
-            width: "50%",
+            width: { xs: "100%", md: "50%" },
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
+            mb: { xs: 4, md: 0 }, // margem embaixo no mobile
           }}
         >
           <Typography
@@ -37,7 +47,8 @@ export default function HeroSection() {
               fontWeight: "bold",
               maxWidth: "600px",
               width: "100%",
-              fontFamily: "Montserrat, Arial, sans-serif", // Título
+              fontFamily: "Montserrat, Arial, sans-serif",
+              fontSize: { xs: "2rem", md: "3rem" }, // fonte menor no mobile
             }}
           >
             Olá, sou Luis Felipe 👋
@@ -50,75 +61,46 @@ export default function HeroSection() {
               color: "text.primary",
               maxWidth: "600px",
               width: "100%",
-              fontFamily: "Roboto, Arial, sans-serif", // Subtítulo
+              fontFamily: "Roboto, Arial, sans-serif",
+              fontSize: { xs: "1rem", md: "1.25rem" },
             }}
           >
             Desenvolvedor | Estudante de Ciência da Computação
           </Typography>
 
-          <Button
-            variant="contained"
-            color="primary"
-            sx={{
-              mt: 3,
-              width: "150px",
-              py: 2,
-              fontWeight: "bold",
-              fontFamily: "Poppins, Arial, sans-serif", // Botão
-            }}
-          >
-            Ver Projetos
-          </Button>
         </Box>
 
-        {/* Box da direita: foto e ícones de contato */}
+        {/* Box da direita: foto + ícones */}
         <Box
           sx={{
-            width: "50%",
+            width: { xs: "100%", md: "50%" },
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          {/* Foto do usuário */}
           <Box
             component="img"
-            src="/fotoperfil.png" // ajuste o caminho da sua foto
+            src={`${process.env.PUBLIC_URL}/fotoperfil.png`}
             alt="Luis Felipe"
             sx={{
-              width: 300,
-              height: 300,
+              width: { xs: 200, sm: 250, md: 300 }, // imagem menor em telas pequenas
+              height: { xs: 200, sm: 250, md: 300 },
               borderRadius: "50%",
               objectFit: "cover",
               mb: 3,
               boxShadow: 3,
             }}
           />
-          {/* Ícones de contato abaixo da foto */}
-          <Box sx={{ display: "flex", gap: 4 }}>
-            <a
-              href="mailto:proglipe@outlook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
-            >
+          <Box sx={{ display: "flex", gap: 4, flexWrap: "wrap", justifyContent: "center" }}>
+            <a href="mailto:proglipe@outlook.com" target="_blank" rel="noopener noreferrer">
               <EmailIcon sx={{ color: "text.primary", fontSize: 40 }} />
             </a>
-            <a
-              href="https://www.linkedin.com/in/luis-felipe-9559982ab/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
-            >
+            <a href="https://www.linkedin.com/in/luis-felipe-9559982ab/" target="_blank" rel="noopener noreferrer">
               <LinkedInIcon sx={{ color: "text.primary", fontSize: 40 }} />
             </a>
-            <a
-              href="https://github.com/LipeProg"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
-            >
+            <a href="https://github.com/LipeProg" target="_blank" rel="noopener noreferrer">
               <GitHubIcon sx={{ color: "text.primary", fontSize: 40 }} />
             </a>
           </Box>

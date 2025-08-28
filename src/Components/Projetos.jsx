@@ -18,76 +18,72 @@ export default function Projetos() {
         marginTop: 8,
       }}
     >
-      <Box sx={{ display: "flex", width: "100%" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" }, // coluna no mobile, linha no desktop
+          width: "100%",
+          gap: 4,
+        }}
+      >
         {/* Box da esquerda: cards dos projetos */}
         <Box
           sx={{
-            width: "50%",
+            width: { xs: "100%", md: "50%" },
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
             px: 2,
+            order: { xs: 2, md: 1 }, // no mobile os cards ficam abaixo do texto
           }}
         >
-
-
-
           <Grid container spacing={3} justifyContent="center">
-            
-            <Grid item xs={12} md={10}>
+            <Grid item xs={12} sm={10}>
               <MediaCard />
             </Grid>
-
-            <Grid item xs={12} md={10}>
+            <Grid item xs={12} sm={10}>
               <Estore />
             </Grid>
-
-            <Grid item xs={12} md={10}>
+            <Grid item xs={12} sm={10}>
               <JrInformatica />
             </Grid>
-            {/* Adicione mais <Grid item><MediaCard /></Grid> se quiser mais cards */}
           </Grid>
         </Box>
 
         {/* Box da direita: textos */}
         <Box
           sx={{
-            width: "50%",
+            width: { xs: "100%", md: "50%" },
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            alignItems: "flex-start",
+            alignItems: { xs: "center", md: "flex-start" },
+            textAlign: { xs: "center", md: "left" },
             px: 2,
+            order: { xs: 1, md: 2 }, // no mobile o texto vem primeiro
           }}
         >
-          {/* Texto de apresentação da aba */}
-
           <Typography
-              variant="h4"
-              gutterBottom
-              sx={{
-                color: "text.primary",
-                fontWeight: "bold",
-                textAlign: "center",
-                fontFamily: "Montserrat, Arial, sans-serif",
-                mb: 3,
-                marginBottom: 5,
-              }}
-            >
-              Projetos
+            variant="h4"
+            gutterBottom
+            sx={{
+              color: "text.primary",
+              fontWeight: "bold",
+              fontFamily: "Montserrat, Arial, sans-serif",
+              mb: 3,
+            }}
+          >
+            Projetos
           </Typography>
-
 
           <Typography
             sx={{
               color: "text.primary",
               fontFamily: "Roboto, Arial, sans-serif",
-              textAlign: "left",
               mb: 3,
-              fontSize: "1.1rem",
+              fontSize: { xs: "1rem", md: "1.1rem" },
               maxWidth: "600px",
-              marginBottom: 8,
             }}
           >
             Aqui você encontra alguns dos meus principais projetos desenvolvidos
@@ -95,7 +91,6 @@ export default function Projetos() {
             um desafio superado e uma oportunidade de aprendizado.
           </Typography>
 
-          {/* Texto sobre como pode ajudar na empresa */}
           <Box sx={{ mb: 4 }}>
             <Typography
               variant="h6"
@@ -103,7 +98,6 @@ export default function Projetos() {
                 color: "text.primary",
                 fontWeight: "bold",
                 fontFamily: "Montserrat, Arial, sans-serif",
-                textAlign: "left",
                 mb: 1,
               }}
             >
@@ -113,13 +107,16 @@ export default function Projetos() {
               sx={{
                 color: "text.primary",
                 fontFamily: "Roboto, Arial, sans-serif",
-                textAlign: "left",
-                fontSize: "1.05rem",
+                fontSize: { xs: "1rem", md: "1.05rem" },
                 maxWidth: "600px",
-                marginTop: 3,
+                mt: 3,
               }}
             >
-              Posso ajudar sua empresa criando sistemas que facilitam o dia a dia e economizam tempo. Gosto de encontrar maneiras de deixar processos mais rápidos e organizados, além de trazer ideias novas para melhorar os resultados. Aprendo rápido, trabalho bem em equipe e estou pronto para contribuir em projetos que façam a empresa crescer.
+              Posso ajudar sua empresa criando sistemas que facilitam o dia a dia e economizam tempo. 
+              Tenho facilidade em encontrar maneiras de deixar processos mais rápidos e organizados, 
+              além de trazer ideias novas para melhorar os resultados. Aprendo com rapidez, colaboro de forma 
+              eficiente em equipe e estou preparado para aplicar meus conhecimentos em projetos que fortaleçam 
+              os resultados da empresa e impulsionem o crescimento sustentável do negócio.
             </Typography>
           </Box>
         </Box>
