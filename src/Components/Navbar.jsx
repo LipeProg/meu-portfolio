@@ -4,7 +4,9 @@ import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 export default function Navbar() {
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
-    section.scrollIntoView({ behavior: "smooth" });
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (

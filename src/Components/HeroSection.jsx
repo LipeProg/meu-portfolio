@@ -82,7 +82,7 @@ export default function HeroSection() {
         >
           <Box
             component="img"
-            src={`${process.env.PUBLIC_URL}/fotoperfil.png`}
+            src="/fotoperfil.png"
             alt="Luis Felipe"
             sx={{
               width: { xs: 200, sm: 250, md: 300 }, // imagem menor em telas pequenas
