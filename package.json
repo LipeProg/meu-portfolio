@@ -2,36 +2,35 @@
   "name": "meu-portfolio",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.3.1",
-    "@mui/material": "^7.3.1",
+    "@tailwindcss/postcss": "^4.2.4",
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "autoprefixer": "^10.5.0",
+    "framer-motion": "^12.0.0",
+    "lucide-react": "^1.14.0",
     "next": "^15.4.6",
+    "postcss": "^8.5.12",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "web-vitals": "^2.1.4"
+    "tailwindcss": "^4.2.4",
+    "typescript": "^5.7.0"
   },
   "scripts": {
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
-    "lint": "next lint"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "lint": "eslint . --ext .ts,.tsx"
   },
   "devDependencies": {
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.4.6"
+  },
+  "optionalDependencies": {
+    "@tailwindcss/oxide-linux-x64-gnu": "^4.2.4"
   }
 }
