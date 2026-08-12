@@ -1,21 +1,16 @@
-'use client';
-
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Projects from '@/components/Projects';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
+import About from '@/components/sections/About/About';
+import Contact from '@/components/sections/Contact/Contact';
+import Hero from '@/components/sections/Hero/Hero';
+import Projects from '@/components/sections/Projects/Projects';
+import { pageStyles as styles } from './page.styles';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black">
-      <Navbar />
+    <main className={styles.main}>
       <Hero />
       <About />
       <Projects />
       <Contact />
-      <Footer />
     </main>
   );
 }
